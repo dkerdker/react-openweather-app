@@ -13,6 +13,10 @@ export default function WeatherSearchBar({ onSearchComplete }) {
   function handleQueryChange(e) {
     setQuery(e.target.value)
   }
+  function handleOnSearchComplete(dataWeather, apiMessage) {
+    onSearchComplete(dataWeather, apiMessage)
+    setQuery('');
+  }
 
   return (
     <motion.div
@@ -42,7 +46,7 @@ export default function WeatherSearchBar({ onSearchComplete }) {
           />
           <WeatherSearchButton
             query={query}
-            onSearchComplete={onSearchComplete}
+            onSearchComplete={handleOnSearchComplete}
           />
         </div>
       </form>

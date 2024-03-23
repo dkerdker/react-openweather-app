@@ -44,7 +44,7 @@ $text-gray: rgb(100, 100, 100);
   justify-content: space-between;
   width: 780px;
   margin: 0 auto;
-  margin-top: 2rem;
+  // margin-top: 2rem;
   padding: 2rem 0rem;
 
   .SearchInput {
@@ -252,11 +252,13 @@ $text-gray: rgb(100, 100, 100);
   .WeatherDetailsRight {
     p {
       text-align: right;
+      white-space: nowrap ;
     }
   }
 
   .WeatherDetailsRight {
     flex-direction: column-reverse;
+
   }
 
   .DetailsImage {
@@ -394,7 +396,7 @@ $text-gray: rgb(100, 100, 100);
 
 /* Dark mode toggle */
 .DarkModeToggle {
-  position: absolute;
-  top: 2%;
-  left: 5%;
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
 }
