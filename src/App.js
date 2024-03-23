@@ -84,18 +84,22 @@ function App() {
             {isDarkMode ? 'Dark' : 'Light'}
           </ToggleButton>
         </div>
+        {currentWeather == null && <h1 class="MerquriTitle">Merquri Weathers</h1>}
         <WeatherSearchBar onSearchComplete={handleOnSearchComplete} />
         {searchErrorMessage && (
           <div className="SearchError">{searchErrorMessage}</div>
         )}
-        {searchHistoryEntries && searchHistoryEntries.length > 0 && (
+        {(currentWeather ||
+          (searchHistoryEntries && searchHistoryEntries.length > 0)) && (
           <WeatherBoard>
             <WeatherDetails currentWeather={currentWeather} />
-            <WeatherSearchHistory
-              searchHistoryEntries={searchHistoryEntries}
-              onSearchComplete={handleOnSearchComplete}
-              onDeleteHistoryEntry={handleOnDeleteHistoryEntry}
-            />
+            {searchHistoryEntries && searchHistoryEntries.length > 0 && (
+              <WeatherSearchHistory
+                searchHistoryEntries={searchHistoryEntries}
+                onSearchComplete={handleOnSearchComplete}
+                onDeleteHistoryEntry={handleOnDeleteHistoryEntry}
+              />
+            )}
           </WeatherBoard>
         )}
       </div>
