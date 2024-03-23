@@ -1,6 +1,5 @@
 {
-  "homepage": "https://dkerdker.github.io/merquri-weather-app",
-  "name": "merquri-weather-app",
+  "name": "react-openweather-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
