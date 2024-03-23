@@ -3,7 +3,7 @@ const API_KEY = '638bffd9569966bf90363d4598dba1cd'
 class GeoCodingAPI {
   async fetch(query) {
     const result = await fetch(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=1&appid=${API_KEY}`
+      `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=1&appid=${API_KEY}`
     )
     const data = await result.json()
     return data.length === 0 ? null : data

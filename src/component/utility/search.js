@@ -1,7 +1,7 @@
 import { getFormattedDateTime } from '../class/SearchHistoryEntry'
 import { GeoCodingAPI, WeatherAPI } from './API'
 
-export default async function searchWeathers(query) {
+export default async function searchWeather(query) {
   // Fetch the coordinate of the location in query for the weather API.
   const dataCoordinate = await new GeoCodingAPI().fetch(query)
 

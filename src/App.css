@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 /*
 .AppBg:after {
   content: ' ';
@@ -22,11 +18,6 @@
 }
 */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -44,17 +35,38 @@
   color: white;
 }
 
+.App {
+  text-align: center;
+}
+
 .App-container {
+  margin: 0 auto;
+  padding-top: 2rem;
+
   display: flex;
+  width: 100%;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: auto;
 
-  width: 100%;
-  height: 100vh;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+
+  min-height: 100vh;
   background-image: url('./assets/bg-light.png');
   background-size: cover;
+  background-attachment: fixed;
   background-position: bottom center;
+
+  transition: all 0.3s;
+}
+
+.DarkMode {
+  .App-container {
+    background-image: url('./assets/bg-dark.png');
+
+    transition: all 0.35s;
+  }
 }
 
 .App-link {
@@ -68,4 +80,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.SearchError {
+  color: rgb(245, 0, 0);
+  padding: 0.5rem;
+  font-size: 1rem;
 }

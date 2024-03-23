@@ -1,0 +1,44 @@
+.SwitcherContainer {
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+}
+
+.Label {
+  margin-right: 1rem;
+  color: rgb(50, 50, 50);
+}
+
+.DarkMode {
+  .Label {
+    color: rgb(200, 200, 200);
+  }
+}
+
+.Switcher {
+  width: 40px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 13px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.Switcher[data-isOn='true'] {
+  justify-content: flex-end;
+}
+
+.Handler {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.DarkMode {
+  .Handler {
+    background-color: rgb(50, 50, 50);
+  }
+}

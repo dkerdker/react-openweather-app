@@ -1,0 +1,400 @@
+/* Variables */
+$purple: #6c40b5;
+$purple-dark: #28124d;
+$text-white: rgb(255, 255, 255);
+$text-white-2: rgba(255, 255, 255, 0.5);
+$text-black-2: rgb(10, 10, 10);
+$text-gray: rgb(100, 100, 100);
+
+/* Weather Dashboard containing "Current Weather Info" and "Search Histories" */
+.WeatherBoard {
+  width: 700px;
+  padding: 4rem;
+  border-radius: 4rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.35);
+  font-size: 1.6rem;
+  margin: 7.5rem auto;
+  color: $text-black-2;
+}
+
+.DarkMode {
+  .WeatherBoard {
+    background: rgba(26, 26, 26, 0.3);
+    color: $text-white;
+    border: none;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  /* Apply when width is 800 pixels or less */
+  .WeatherBoard {
+    width: 318px;
+    padding: 2rem;
+    font-size: 1.4rem;
+    border-radius: 2rem;
+    margin: 9rem auto;
+  }
+}
+
+/* Weather Search Bar */
+.SearchBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 780px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 2rem 0rem;
+
+  .SearchInput {
+    font-size: 1.5rem;
+    width: 100%;
+    height: 2rem;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.35);
+    border: none;
+    border-radius: 2rem;
+    padding: 2rem 4rem;
+    font-weight: 300;
+
+    &.Focus::placeholder {
+      color: transparent;
+      font-size: 1.5rem;
+    }
+
+    &.SearchInput::placeholder {
+      font-weight: 100;
+      color: $text-gray;
+      font-size: 1.3rem;
+      opacity: 0.7;
+    }
+  }
+
+  .SearchInput:focus-visible {
+    outline: none;
+  }
+
+  .SearchLabel {
+    position: relative;
+    pointer-events: none;
+    left: 4rem;
+    top: 0.7rem;
+    width: 0;
+    font-size: 1.3rem;
+    color: $text-gray;
+    opacity: 0;
+    transition: opacity 0.2s;
+
+    &.Focus {
+      opacity: 1;
+    }
+  }
+
+  .WeatherSearchButton {
+    background-color: $purple;
+    border: none;
+    border-radius: 2rem;
+    background-size: 0;
+    width: 75px;
+    height: 60px;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-left: 2rem;
+    padding: 0 !important;
+
+    .ImageIcon {
+      filter: invert(1);
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+  }
+}
+
+.DarkMode {
+  .SearchBar {
+    .SearchInput {
+      background: rgba(26, 26, 26, 0.5);
+      color: $text-white;
+
+      &.SearchInput::placeholder {
+        color: $text-white;
+      }
+    }
+
+    .SearchLabel {
+      color: $text-white-2;
+    }
+
+    .WeatherSearchButton {
+      background-color: $purple-dark;
+      outline: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  /* Apply when width is 800 pixels or less */
+  .SearchBar {
+    width: 360px;
+    padding: 0;
+
+    > .SearchInput {
+      height: 2rem;
+      padding: 1rem 4rem;
+    }
+
+    > .SearchLabel {
+      &.Focus {
+        opacity: 0;
+      }
+    }
+
+    > .WeatherSearchButton {
+      width: 60px;
+      height: 40px;
+      border-radius: 0.8rem;
+      margin-left: 10px;
+
+      > .ImageIcon {
+        width: 2.2rem;
+        height: 2.2rem;
+      }
+    }
+
+    > .SearchInput {
+      border-radius: 0.8rem;
+    }
+  }
+}
+
+/* Weather Details */
+.DetailsContainer {
+  position: relative;
+  display: flex;
+  padding: 0 10px;
+  margin-bottom: 2.5rem;
+  p {
+    margin: 0;
+    margin-top: 1rem;
+    text-align: left;
+  }
+}
+
+.DarkMode {
+  .WeatherDegree {
+    color: $text-white;
+  }
+
+  .WeatherDetailsLeft {
+    color: $text-white;
+  }
+
+  .WeatherDetailsRight {
+    color: $text-white;
+  }
+}
+
+.DetailsLeft {
+}
+
+.DetailsRight {
+  display: flex;
+  flex-grow: 1;
+}
+
+.WeatherDegree {
+  color: $purple;
+  font-weight: bold;
+  font-size: 9rem;
+  line-height: 75%;
+  margin-top: 1.7rem !important;
+}
+
+.WeatherDetailsLeft {
+  color: $text-gray;
+}
+
+.WeatherDetailsRight {
+  color: $text-gray;
+  display: flex;
+  padding-left: 30px;
+  align-self: self-end;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.TextBold {
+  font-weight: bold;
+}
+
+.TextCapitalize {
+  text-transform: capitalize;
+}
+
+.DetailsImage {
+  position: absolute;
+  bottom: -10%;
+  right: -5%;
+  user-select: none;
+  pointer-events: none;
+}
+
+.WeatherDateTime {
+  font-size: 1.4rem;
+}
+
+@media only screen and (max-width: 800px) {
+  /* Apply when width is 800 pixels or less */
+  .WeatherDetailsRight {
+    p {
+      text-align: right;
+    }
+  }
+
+  .WeatherDetailsRight {
+    flex-direction: column-reverse;
+  }
+
+  .DetailsImage {
+    object-fit: contain;
+    width: 70%;
+    bottom: 40%;
+    right: -10%;
+  }
+}
+
+/* Weather History */
+.HistoryContainer {
+  padding: 2rem;
+  border-radius: 2.4rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-bottom: 0;
+}
+
+.DarkMode {
+  .HistoryContainer {
+    background: rgba(26, 26, 26, 0.3);
+  }
+}
+
+.HistoryTitle {
+  text-align: left;
+  padding-left: 0.85rem;
+  margin: 0;
+  margin-bottom: 2.5rem;
+}
+
+.HistoryEntry {
+  position: static;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.8rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 1.3rem 2rem;
+  align-items: center;
+}
+
+.DarkMode {
+  .HistoryEntry {
+    background: rgba(26, 26, 26, 0.5);
+  }
+  .WeatherDateTime {
+    color: $text-white-2;
+  }
+}
+
+.HistoryDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.RoundButton {
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  background-size: 50%;
+  padding: 17px;
+  width: 17px;
+  height: 17px;
+  vertical-align: middle;
+  cursor: pointer;
+  box-shadow: 3px 6px 12px 5px rgba(0, 0, 0, 0.07);
+  margin-left: 10px;
+}
+
+.DarkMode {
+  .RoundButton {
+    background-color: transparent;
+    outline: 2px solid rgba(255, 255, 255, 0.4);
+  }
+  .ImageIcon {
+    filter: contrast(0);
+  }
+}
+
+.ImageIcon {
+  filter: contrast(0.2);
+  position: relative;
+  top: -9px;
+  left: -9px;
+  width: 18px;
+  height: 18px;
+  user-select: none;
+  pointer-events: none;
+}
+
+.HistoryControls {
+  display: flex;
+  align-items: center;
+
+  .WeatherSearchButton {
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    background-size: 50%;
+    padding: 17px;
+    width: 17px;
+    height: 17px;
+    vertical-align: middle;
+    cursor: pointer;
+    box-shadow: 3px 6px 12px 5px rgba(0, 0, 0, 0.07);
+    margin-left: 10px;
+  }
+}
+
+.DarkMode {
+  .WeatherSearchButton {
+    background-color: transparent;
+    outline: 2px solid rgba(255, 255, 255, 0.4);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  /* Apply when width is 800 pixels or less */
+  .HistoryEntry {
+    padding: 1.3rem 1rem;
+  }
+
+  .HistoryDetails {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .WeatherDateTime {
+    font-size: 1rem;
+  }
+}
+
+/* Dark mode toggle */
+.DarkModeToggle {
+  position: absolute;
+  top: 2%;
+  left: 5%;
+}
