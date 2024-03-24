@@ -27,7 +27,7 @@ $text-gray: rgb(100, 100, 100);
 }
 
 @media only screen and (max-width: 800px) {
-  /* Apply when width is 800 pixels or less */
+  /* apply when width is 800 pixels or less */
   .WeatherBoard {
     width: 318px;
     padding: 2rem;
@@ -44,7 +44,6 @@ $text-gray: rgb(100, 100, 100);
   justify-content: space-between;
   width: 780px;
   margin: 0 auto;
-  // margin-top: 2rem;
   padding: 2rem 0rem;
 
   .SearchInput {
@@ -137,7 +136,7 @@ $text-gray: rgb(100, 100, 100);
 }
 
 @media only screen and (max-width: 800px) {
-  /* Apply when width is 800 pixels or less */
+  /* apply when width is 800 pixels or less */
   .SearchBar {
     width: 360px;
     padding: 0;
@@ -248,17 +247,16 @@ $text-gray: rgb(100, 100, 100);
 }
 
 @media only screen and (max-width: 800px) {
-  /* Apply when width is 800 pixels or less */
+  /* apply when width is 800 pixels or less */
   .WeatherDetailsRight {
     p {
       text-align: right;
-      white-space: nowrap ;
+      white-space: nowrap;
     }
   }
 
   .WeatherDetailsRight {
     flex-direction: column-reverse;
-
   }
 
   .DetailsImage {
@@ -379,7 +377,7 @@ $text-gray: rgb(100, 100, 100);
 }
 
 @media only screen and (max-width: 800px) {
-  /* Apply when width is 800 pixels or less */
+  /* apply when width is 800 pixels or less */
   .HistoryEntry {
     padding: 1.3rem 1rem;
   }
@@ -394,7 +392,7 @@ $text-gray: rgb(100, 100, 100);
   }
 }
 
-/* Dark mode toggle */
+/* Dark Mode toggle */
 .DarkModeToggle {
   position: fixed;
   bottom: 2%;
@@ -402,9 +400,9 @@ $text-gray: rgb(100, 100, 100);
 }
 
 .MerquriTitle {
-font-size: 3rem;
-font-weight: 600;
-letter-spacing: 0.2rem;
-margin-bottom: 1rem;
-opacity: .8;
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
 }

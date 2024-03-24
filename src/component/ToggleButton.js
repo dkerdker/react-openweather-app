@@ -1,9 +1,9 @@
-import { AnimatePresence, motion } from 'framer-motion'
-import { useState } from 'react'
-import './ToggleButton.scss'
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+import "./ToggleButton.scss";
 
 export default function ToggleButton({ onClick, children }) {
-  const [isOn, setIsOn] = useState(false)
+  const [isOn, setIsOn] = useState(false);
 
   return (
     <div className="SwitcherContainer">
@@ -12,8 +12,8 @@ export default function ToggleButton({ onClick, children }) {
         className="Switcher"
         data-ison={isOn}
         onClick={() => {
-          setIsOn(!isOn)
-          onClick()
+          setIsOn(!isOn);
+          onClick();
         }}
       >
         <AnimatePresence initial={false}>
@@ -22,7 +22,7 @@ export default function ToggleButton({ onClick, children }) {
             className="Handler"
             layout
             transition={{
-              type: 'spring',
+              type: "spring",
               stiffness: 700,
               damping: 30,
             }}
@@ -30,5 +30,5 @@ export default function ToggleButton({ onClick, children }) {
         </AnimatePresence>
       </div>
     </div>
-  )
+  );
 }
